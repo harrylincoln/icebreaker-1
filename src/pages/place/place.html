@@ -1,0 +1,72 @@
+<!--
+  Generated template for the PlacePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<style type="text/css">
+	.image {
+     height: 5vw; 
+     width: 5vw; 
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px gray;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circle-pic{
+    width: 40vw;
+    height: 40vw;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px gray;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+margin-bottom: 2vw;
+    
+}
+
+.center {
+	display: block;
+  vertical-align: middle;
+  text-align: center;
+}
+</style>
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+  <ion-content padding="true" class="has-header">
+
+
+
+    <img class="circle-pic center" 
+ src="http://lorempixel.com/1000/1000/people/" />
+
+
+ 	<div class="center">
+    <h1 id="profile-heading1" style="color:#000000;">{{name}}</h1>
+    <div id="profile-markdown1" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">Some friendly
+        <strong>markdown</strong>
+      </p>
+    </div>
+    
+    <button ion-button (click)="sendEmail()">Want to meet up?</button>
+    <button ion-button (click)="sendSMS()">Send SMS</button>
+    </div>
+  </ion-content>

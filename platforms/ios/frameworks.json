@@ -1,0 +1,9 @@
+{
+    "CoreLocation.framework": 2,
+    "WebKit.framework": 1,
+    "libz.tbd": 1,
+    "MessageUI.framework": 2,
+    "UserNotifications.framework": 1,
+    "Security.framework": 1,
+    "SystemConfiguration.framework": 1
+}

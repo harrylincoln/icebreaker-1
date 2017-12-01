@@ -1,0 +1,125 @@
+<style type="text/css">
+  .pull-right {
+position: absolute;
+right: 2px;
+top: 0px;
+}
+
+.pull-right img {
+      height: 50px;
+          border-radius: 50px;
+}
+
+
+.fixed-header{
+  margin-top:43px;
+  /* 
+   The ionic header bar is 43px in height,
+   put your content below the header bar.
+  */
+}
+
+.platform-webview.platform-ios.platform-cordova .fixed-header{
+  margin-top:63px;
+  /* On iOS, moving a div out of ion-content,
+  I think you need to compensation for the 20px system status bar.
+  so it's 43px+20px=63px. but I'm not so sure, it hasn't been tested.
+  Test it yourself and make modifications if needed.
+  */
+}
+
+.my-video
+{
+  height:200px;
+  width:100%;
+  position:absolute;
+  background:grey;
+  color:red;
+  text-align:center;
+  padding:20px;
+}
+
+.ion-content-below-my-video{
+  margin-top:200px!important;
+}
+
+.platform-webview.platform-ios.platform-cordova .ion-content-below-my-video{
+  margin-top:220px;
+  /*
+  Same as .fixed-header
+  */
+}
+
+  .center {
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+}
+</style>
+
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Researchers Near You
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content padding="true" class="">
+
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+ 
+
+ <div class="center">
+
+   <h1 *ngIf="username">Welcome {{username}}</h1>
+   
+   <button ion-button  (click)="test()">Loctae</button>
+   <button ion-button (click)="doubletest()">doubletest</button>
+
+      <button ion-button (click)="loadLoginPage()">Login</button>
+
+      <button ion-button (click)="onOpenPlace()">onOpenPlace</button>
+
+
+      
+ </div>
+      
+
+<ion-list>
+    <ion-item *ngFor="let item of samples" (click)="loadPlacePage(item.id, item.name)">
+
+      <div class="item-icon-left">
+        <h4>{{item.name}}</h4>
+        <p>{{item.interests}}</p>
+    </div>
+    <div class="pull-right">
+        <img src="{{item.image}}">
+    </div>
+  
+    </ion-item>
+  </ion-list>
+
+    <ion-list>
+
+
+
+         <p>{{ location?.coords.latitude }}</p>
+          <p>{{ doubletestVar }}</p>
+    </ion-list>
+  </ion-content>
+

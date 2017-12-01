@@ -1,0 +1,8 @@
+{
+  "name": "icebreaker",
+  "app_id": "8bd6fb60",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
